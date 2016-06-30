@@ -83,6 +83,13 @@ namespace HoloToolkit.Unity
                 gestureRecognizer.CancelGestures();
                 gestureRecognizer.StartCapturingGestures();
 
+                if (Input.GetKey("l")) //added this to work on keyboard input, for testing with Oculus Rift
+                {
+                    if (FocusedObject != null)
+                    {
+                        FocusedObject.SendMessageUpwards("OnSelect");
+                    }
+                }
             }
         }
 
